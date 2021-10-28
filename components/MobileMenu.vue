@@ -9,7 +9,7 @@
           :to="`/work/${project.project.slug}`" 
           class="lg:hover:text-grey"
           v-html="spanify(project.project.data.title)"
-          @click.native="$store.dispatch('setMobileMenuOpen', false)"
+          @click.native="hideMenu()"
         ></nuxt-link>
       </p>
       <p>--</p>
@@ -18,7 +18,7 @@
           to="/info" 
           class="lg:hover:text-grey"
           v-html="spanify('Info')"
-          @click.native="$store.dispatch('setMobileMenuOpen', false)"
+          @click.native="hideMenu()"
         ></nuxt-link>
       </p>
     </div>
@@ -109,9 +109,14 @@ export default {
   methods: {
     setDiff (index) {
       this.$store.dispatch('setCurrentDiff', index)
+      this.hideMenu()
     },
     toggleGrid () {
       this.$store.dispatch('setShowGrid', !this.showGrid)
+    },
+    hideMenu () {
+      document.body.style.overflow = 'initial'
+      $store.dispatch('setMobileMenuOpen', false)
     }
   }
 }
