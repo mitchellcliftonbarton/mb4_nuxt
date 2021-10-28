@@ -116,7 +116,7 @@ export default {
     },
     hideMenu () {
       document.body.style.overflow = 'initial'
-      $store.dispatch('setMobileMenuOpen', false)
+      this.$store.dispatch('setMobileMenuOpen', false)
     }
   }
 }
@@ -152,5 +152,6 @@ export default {
     outline: none;
     box-shadow: none;
     background: transparent;
+    border-radius: 0px;
   }
 </style>
