@@ -42,6 +42,7 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/prismic',
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -69,6 +70,10 @@ export default {
   prismic: {
     endpoint: 'https://mitchell-barton.prismic.io/api/v2',
     modern: true
+  },
+
+  googleAnalytics: {
+    id: 'UA-61480746-1'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

@@ -72,7 +72,15 @@ export default {
       this.$store.dispatch('setShowGrid', !this.showGrid)
     },
     toggleMenu () {
-      !this.mobileMenuOpen ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'initial'
+      if (process.client) {
+        if (!this.mobileMenuOpen) {
+          document.body.style.overflow = 'hidden'
+          console.log('hiding')
+        } else {
+          document.body.style.overflow = 'initial'
+          console.log('initial')
+        }
+      }
       this.$store.dispatch('setMobileMenuOpen', !this.mobileMenuOpen)
     }
   }
