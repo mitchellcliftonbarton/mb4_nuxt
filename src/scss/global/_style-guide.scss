@@ -1,0 +1,155 @@
+@layer utilities {
+  @variants responsive {
+    .push-nav {
+      padding-top: 62px;
+
+      @media screen and (min-width: theme('screens.lg')) {
+        padding-top: 127px;
+      }
+    }
+  }
+}
+
+::selection {
+  background: theme('colors.red');
+  color: white;
+}
+
+::-moz-selection {
+  background: theme('colors.red');
+  color: white;
+}
+
+* {
+  @apply bed-body;
+}
+
+.formatted {
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      @apply text-grey;
+    }
+  }
+
+  &.italic-spans {
+    em {
+      font-style: normal;
+    }
+  }
+}
+
+.wcag-hidden {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+html {
+  font-size: 10px;
+  width: 100%;
+  transition: background-color .4s;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  height: 100%;
+  cursor: auto;
+
+  p,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  a,
+  button {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  button {
+    box-shadow: none;
+    outline: none;
+    background: none;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+  }
+
+  img,
+  video {
+    &.lazyLoad {
+      opacity: 0;
+      transition: opacity .7s;
+      transition-delay: 100ms;
+
+      &.isLoaded {
+        opacity: 1;
+      }
+    }
+  }
+
+  .main.level-intermediate {
+    .level-hide,
+    .formatted.italic-spans em {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .main.level-difficult {
+    .level-hide,
+    .formatted.italic-spans em {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    * {
+      color: #d0d0d0;
+      border-color: #d0d0d0;
+    }
+
+    input {
+      &::placeholder {
+        color: #d0d0d0;
+      }
+    }
+  }
+
+  .main.level-expert {
+    .level-hide,
+    .formatted.italic-spans em {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    * {
+      color: white;
+      border-color: #d0d0d0;
+
+      &:hover {
+        color: black;
+      }
+    }
+
+    input {
+      &::placeholder {
+        color: #d0d0d0;
+      }
+    }
+  }
+}
