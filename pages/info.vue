@@ -81,6 +81,7 @@
       <div class="online mb-32">
         <h2 class="mb-12 text-red" v-html="spanify('Online')"></h2>
         <div class="formatted">
+          <p><a target="_blank" rel="noopener" href="https://www.point.app/article/when-the-nba-gets-absurd-a-conversation-with-mitchell-barton" v-html="spanify('Point | Intersection')"></a></p>
           <p><a target="_blank" rel="noopener" href="https://dergreif-online.de/guest-room/monica-allende/" v-html="spanify('Def Grief')"></a></p>
           <p><a target="_blank" rel="noopener" href="https://www.phasesmag.com/mitchell-barton/selected-works-42/" v-html="spanify('Phases Magazine')"></a></p>
           <p><a target="_blank" rel="noopener" href="https://anewnothing.com/mitchell-barton-eric-edvalson/" v-html="spanify('A New Nothing')"></a></p>
