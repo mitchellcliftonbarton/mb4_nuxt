@@ -15,7 +15,7 @@
                 <div class="mc-field-group">
                     <label htmlFor="mce-EMAIL" class="inline-block mr-1" v-html="spanify('I send periodic emails. Sign up')"></label>
                     <input type="email" name="EMAIL" class="required email w-full lg:w-auto" placeholder="here" id="mce-EMAIL" />
-                    <input type="submit" defaultValue="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="hidden" />
+                    <input type="submit" defaultValue="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="wcag-hidden" />
                 </div>
                 <div id="mce-responses" class="clear">
                     <div class="response hidden" id="mce-error-response"></div>
