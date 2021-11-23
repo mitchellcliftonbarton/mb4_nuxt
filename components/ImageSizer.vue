@@ -43,8 +43,7 @@ export default {
     width: 100%;
 
     .inner {
-      background: linear-gradient(to bottom,#858585,#858585 10%,#ffffff 10%,#ffffff);
-      background-size: 100% 4px;
+      background-color: #f4f4f4;
     }
 
     &.portrait {
