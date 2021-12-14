@@ -10,6 +10,13 @@
           ></nuxt-link>
         </p>
         <p class="hidden lg:block">--</p>
+        <p>
+          <nuxt-link 
+            to="/three-basketball-games-preorder" 
+            class="lg:hover:text-grey"
+            v-html="spanify('Three Basketball Games (Preorder)')"
+          ></nuxt-link>
+        </p>
         <p 
           v-for="(project, index) in projects" 
           :key="index"

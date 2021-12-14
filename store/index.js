@@ -9,7 +9,8 @@ export const state = () => ({
   ],
   currentDiff: 0,
   showGrid: false,
-  mobileMenuOpen: false
+  mobileMenuOpen: false,
+  shopifyAccessToken: 'd3f1359cd3f41d826c5fd37e3840113c'
 })
 
 export const mutations = {
