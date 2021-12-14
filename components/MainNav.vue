@@ -10,7 +10,7 @@
           ></nuxt-link>
         </p>
         <p class="hidden lg:block">--</p>
-        <p>
+        <p class="hidden lg:block">
           <nuxt-link 
             to="/three-basketball-games-preorder" 
             class="lg:hover:text-grey"

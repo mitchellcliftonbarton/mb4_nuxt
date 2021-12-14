@@ -1,6 +1,14 @@
 <template>
   <div id="mobile-menu" class="fixed w-full h-full top-0 left-0 lg:hidden push-nav bg-white z-20 px-6 lg:px-8 pb-8">
     <div class="top mb-20">
+      <p>
+        <nuxt-link 
+          to="/three-basketball-games-preorder" 
+          class="lg:hover:text-grey"
+          v-html="spanify('Three Basketball Games (Preorder)')"
+          @click.native="hideMenu()"
+        ></nuxt-link>
+      </p>
       <p 
         v-for="(project, index) in projects" 
         :key="index"
