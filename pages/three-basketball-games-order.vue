@@ -127,7 +127,7 @@ export default {
   },
   data () {
     return {
-      description: '"Three Basketball Games" features a body of work created from 2018-2021 that focuses on basketball games that were photographed from my living room. Available for order above or <a href="https://extra-point.com/products/three-basketball-games-order" target="_blank" rel="noreferrer">here</a>.<br><br>$40 USD + Shipping<br><br>200ish pages<br><br>150ish images<br><br>9" x 12"<br><br>Disclaimer: The images shown here are mockups. The book is at the press currently and will be a arriving in the coming weeks.',
+      description: '"Three Basketball Games" features a body of work created from 2018-2021 that focuses on basketball games that were photographed from my living room. Available for order above or <a href="https://extra-point.com/products/three-basketball-games-preorder" target="_blank" rel="noreferrer">here</a>.<br><br>$40 USD + Shipping<br><br>200ish pages<br><br>150ish images<br><br>9" x 12"<br><br>Disclaimer: The images shown here are mockups. The book is at the press currently and will be a arriving in the coming weeks.',
       client: null,
       quantity: 1,
       checkout: null,
@@ -145,20 +145,16 @@ export default {
       if (this.quantity === 0) {
         this.client.checkout.updateLineItems(this.checkout.id, { id: this.lineId, quantity: this.quantity }).then((checkout) => {
           this.checkout = checkout
-          console.log(this.checkout)
-          console.log('to zero')
           this.lineId = null
         })
       } else if (this.quantity === 1 && positive) {
         this.client.checkout.addLineItems(this.checkout.id, { variantId: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDEzMDE0OTg3NTg1MA==', quantity: 1 }).then((checkout) => {
           this.checkout = checkout
           this.lineId = checkout.lineItems[0].id
-          console.log(this.checkout.lineItems[0].quantity)
         })
       } else {
         this.client.checkout.updateLineItems(this.checkout.id, { id: this.lineId, quantity: this.quantity }).then((checkout) => {
           this.checkout = checkout
-          console.log(this.checkout.lineItems[0].quantity)
         })
       }
     },
@@ -205,9 +201,9 @@ export default {
     justify-content: center;
     align-content: center;
     border: 1px solid black;
+  }
 
-    span {
-      line-height: 1;
-    }
+  .quantity-button span {
+    line-height: 1;
   }
 </style>
