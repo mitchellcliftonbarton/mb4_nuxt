@@ -3,9 +3,9 @@
     <div class="top mb-20">
       <p>
         <nuxt-link 
-          to="/three-basketball-games-preorder" 
+          to="/three-basketball-games-order" 
           class="lg:hover:text-grey"
-          v-html="spanify('Three Basketball Games (Preorder)')"
+          v-html="spanify('Three Basketball Games')"
           @click.native="hideMenu()"
         ></nuxt-link>
       </p>

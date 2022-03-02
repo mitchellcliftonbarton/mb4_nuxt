@@ -12,9 +12,9 @@
         <p class="hidden lg:block">--</p>
         <p class="hidden lg:block">
           <nuxt-link 
-            to="/three-basketball-games-preorder" 
+            to="/three-basketball-games-order" 
             class="lg:hover:text-grey"
-            v-html="spanify('Three Basketball Games (Preorder)')"
+            v-html="spanify('Three Basketball Games')"
           ></nuxt-link>
         </p>
         <p 

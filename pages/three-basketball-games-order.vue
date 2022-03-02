@@ -1,12 +1,12 @@
 <template>
   <div class="page-wrap grid grid-cols-12 p-8 push-nav lg:pt-0">
     <div class="wrapper col-span-12 lg:col-span-10 lg:col-start-3 grid grid-cols-10">
-      <h1 class="wcag-hidden">Three Basketball Games (Preorder)</h1>
+      <h1 class="wcag-hidden">Three Basketball Games</h1>
 
       <div class="preorder col-span-10 mb-20">
         <form ref="form" class="flex items-center">
           <input type="hidden" :value="quantity">
-          <button @click.prevent="submitForm()" type="submit" class="bg-red p-5 text-white lg:hover:bg-black transition-colors duration-300 mr-10">Preorder</button>
+          <button @click.prevent="submitForm()" type="submit" class="bg-red p-5 text-white lg:hover:bg-black transition-colors duration-300 mr-10">Order</button>
           <div class="flex">
             <span>Quantity:</span>
             <div class="flex ml-4">
@@ -122,12 +122,12 @@ export default {
   components: { ImageSizer },
   head () {
     return {
-      title: `Mitchell Barton | Three Basketball Games (Preorder)`
+      title: `Mitchell Barton | Three Basketball Games`
     }
   },
   data () {
     return {
-      description: '"Three Basketball Games" features a body of work created from 2018-2021 that focuses on basketball games that were photographed from my living room. Available for preorder above or <a href="https://extra-point.com/products/three-basketball-games-preorder" target="_blank" rel="noreferrer">here</a>.<br><br>$40 USD + Shipping<br><br>200ish pages<br><br>150ish images<br><br>9" x 12"<br><br>Disclaimer: The images shown here are mockups.',
+      description: '"Three Basketball Games" features a body of work created from 2018-2021 that focuses on basketball games that were photographed from my living room. Available for order above or <a href="https://extra-point.com/products/three-basketball-games-preorder" target="_blank" rel="noreferrer">here</a>.<br><br>$40 USD + Shipping<br><br>200ish pages<br><br>150ish images<br><br>9" x 12"<br><br>Disclaimer: The images shown here are mockups. The book is at the press currently and will be a arriving in the coming weeks.',
       client: null,
       quantity: 1,
       checkout: null,
