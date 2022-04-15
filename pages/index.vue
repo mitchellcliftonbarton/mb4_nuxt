@@ -5,8 +5,8 @@
 
       <div class="media col-span-9 mt-20">
         <div 
-          v-for="(media, index) in project.data.media" 
-          :key="index" 
+          v-for="(media, index) in project.data.media"
+          :key="index"
           class="mb-20"
         >
           <ImageSizer 

@@ -4,7 +4,7 @@
       <h1 class="wcag-hidden">Three Basketball Games</h1>
 
       <div class="preorder col-span-10 mb-20">
-        <form ref="form" class="flex items-center">
+        <form v-if="available" ref="form" class="flex items-center">
           <input type="hidden" :value="quantity">
           <button @click.prevent="submitForm()" type="submit" class="bg-red p-5 text-white lg:hover:bg-black transition-colors duration-300 mr-10">Order</button>
           <div class="flex">
@@ -27,6 +27,10 @@
             </div>
           </div>
         </form>
+
+        <div v-else>
+          <span class="bg-red p-5 text-white mr-10">Sold Out</span>
+        </div>
       </div>
 
       <div class="formatted italic-spans col-span-10 lg:col-span-6" v-html="description"></div>
@@ -36,9 +40,9 @@
           class="mb-20"
         >
           <ImageSizer 
-            :url="require(`../src/images/mockup-cover.jpg`)"
-            :width="2000"
-            :height="1333"
+            :url="require(`../src/images/email-1.jpg`)"
+            :width="1000"
+            :height="1000"
             :alt="`Three Basketball Games Cover`"
           />
         </div>
@@ -47,9 +51,9 @@
           class="mb-20"
         >
           <ImageSizer 
-            :url="require(`../src/images/mockup-spread-1.jpg`)"
+            :url="require(`../src/images/email-2.jpg`)"
             :width="2000"
-            :height="1333"
+            :height="1597"
             :alt="`Three Basketball Games Cover`"
           />
         </div>
@@ -58,9 +62,9 @@
           class="mb-20"
         >
           <ImageSizer 
-            :url="require(`../src/images/mockup-spread-2.jpg`)"
+            :url="require(`../src/images/email-3.jpg`)"
             :width="2000"
-            :height="1333"
+            :height="1597"
             :alt="`Three Basketball Games Cover`"
           />
         </div>
@@ -69,9 +73,9 @@
           class="mb-20"
         >
           <ImageSizer 
-            :url="require(`../src/images/mockup-spread-3.jpg`)"
+            :url="require(`../src/images/email-4.jpg`)"
             :width="2000"
-            :height="1333"
+            :height="1597"
             :alt="`Three Basketball Games Cover`"
           />
         </div>
@@ -80,9 +84,9 @@
           class="mb-20"
         >
           <ImageSizer 
-            :url="require(`../src/images/mockup-spread-4.jpg`)"
+            :url="require(`../src/images/email-5.jpg`)"
             :width="2000"
-            :height="1333"
+            :height="1597"
             :alt="`Three Basketball Games Cover`"
           />
         </div>
@@ -91,9 +95,9 @@
           class="mb-20"
         >
           <ImageSizer 
-            :url="require(`../src/images/mockup-spread-5.jpg`)"
+            :url="require(`../src/images/email-6.jpg`)"
             :width="2000"
-            :height="1333"
+            :height="1597"
             :alt="`Three Basketball Games Cover`"
           />
         </div>
@@ -102,9 +106,31 @@
           class="mb-20"
         >
           <ImageSizer 
-            :url="require(`../src/images/mockup-spread-6.jpg`)"
+            :url="require(`../src/images/email-7.jpg`)"
             :width="2000"
-            :height="1333"
+            :height="1597"
+            :alt="`Three Basketball Games Cover`"
+          />
+        </div>
+
+        <div
+          class="mb-20"
+        >
+          <ImageSizer 
+            :url="require(`../src/images/email-8.jpg`)"
+            :width="2000"
+            :height="1597"
+            :alt="`Three Basketball Games Cover`"
+          />
+        </div>
+
+        <div
+          class="mb-20"
+        >
+          <ImageSizer 
+            :url="require(`../src/images/email-9.jpg`)"
+            :width="2000"
+            :height="1597"
             :alt="`Three Basketball Games Cover`"
           />
         </div>
@@ -132,7 +158,8 @@ export default {
       quantity: 1,
       checkout: null,
       productId: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2NjA1MjQwMTU3NTQ=',
-      lineId: null
+      lineId: null,
+      available: true
     }
   },
   computed: {
@@ -180,10 +207,85 @@ export default {
           this.lineId = checkout.lineItems[0].id
         })
       })
+    },
+    fetchProduct () {
+      // this.client.product.fetchAll().then((products) => {
+      //   // Do something with the products
+      //   console.log(products);
+      // });
+      this.client.product.fetch('Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY2NjA1MjQwMTU3NTQ=').then((product) => {
+        // Do something with the product
+        console.log(product)
+        this.available = product.availableForSale
+      });
+      // const productsQuery = this.client.graphQLClient.query((root) => {
+      //   root.addConnection('products', { args: { first: 50 } }, (product) => {
+      //     product.add('title')
+      //     product.add('id')
+      //     product.add('totalInventory')
+      //     // collection.add('title')
+      //     // collection.add('handle')
+      //     // collection.add('id')
+      //     // collection.addConnection('products', {args: {first: 100}}, (product) => {
+      //     //   product.add('title')
+      //     //   product.add('handle')
+      //     //   product.add('id')
+      //     //   product.add('availableForSale')
+      //     //   product.add('description')
+      //     //   product.add('productType')
+      //     //   product.add('priceRange', priceRange => {
+      //     //     priceRange.add('minVariantPrice', minVariantPrice => {
+      //     //       minVariantPrice.add('amount')
+      //     //       minVariantPrice.add('currencyCode')
+      //     //     })
+      //     //   })
+      //     //   product.add('options', options => {
+      //     //     options.add('name')
+      //     //     options.add('values')
+      //     //   })
+      //     //   product.addConnection('images', {args: {first: 100}}, (image) => {
+      //     //     image.add('id')
+      //     //     image.add('altText')
+      //     //     image.add('originalSrc')
+      //     //   })
+      //     //   product.addConnection('collections', {args: {first: 10}}, (collection) => {
+      //     //     collection.add('title')
+      //     //     collection.add('handle')
+      //     //   })
+      //     //   product.add('totalInventory')
+      //     //   product.addConnection('variants', {args: {first: 100}}, (variant) => {
+      //     //     variant.add('title')
+      //     //     variant.add('availableForSale')
+      //     //     variant.add('price')
+      //     //     variant.add('id')
+      //     //     variant.add('quantityAvailable')
+      //     //     variant.add('sku')
+      //     //     variant.add('priceV2', priceV2 => {
+      //     //       priceV2.add('amount')
+      //     //       priceV2.add('currencyCode')
+      //     //     })
+      //     //     variant.add('compareAtPriceV2', compareAtPriceV2 => {
+      //     //       compareAtPriceV2.add('amount')
+      //     //       compareAtPriceV2.add('currencyCode')
+      //     //     })
+      //     //     variant.add('selectedOptions', selectedOptions => {
+      //     //       selectedOptions.add('name')
+      //     //       selectedOptions.add('value')
+      //     //     })
+      //     //   })
+      //     // })
+      //   })
+      // })
+
+      // this.client.graphQLClient.send(productsQuery).then(({model, data}) => {
+      //   // Do something with the products
+      //   console.log(model);
+      // });
     }
   },
   async mounted () {
     await this.createClient()
+    await this.fetchProduct()
     await this.createCheckout()
   }
 }
