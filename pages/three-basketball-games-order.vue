@@ -153,7 +153,7 @@ export default {
   },
   data () {
     return {
-      description: '"Three Basketball Games" features a body of work created from 2018-2021 that focuses on basketball games that were photographed from my living room. Available for order above or <a href="https://extra-point.com/products/three-basketball-games-preorder" target="_blank" rel="noreferrer">here</a>.<br><br>$40 USD + Shipping<br><br>200ish pages<br><br>150ish images<br><br>9" x 12"<br><br>Disclaimer: The images shown here are mockups. The book is at the press currently and will be a arriving in the coming weeks.',
+      description: '"Three Basketball Games" features a body of work created from 2018-2021 that focuses on basketball games that were photographed from my living room. Available for order above or <a href="https://extra-point.com/products/three-basketball-games-preorder" target="_blank" rel="noreferrer">here</a>.<br><br>$40 USD + Shipping<br><br>188 pages<br><br>144 images<br><br>9" x 12"',
       client: null,
       quantity: 1,
       checkout: null,
