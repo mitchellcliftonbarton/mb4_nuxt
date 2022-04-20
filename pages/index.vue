@@ -4,6 +4,33 @@
       <h1 class="wcag-hidden">Mitchell Barton</h1>
 
       <div class="media col-span-9 mt-20">
+        <div class="mb-20">
+          <ImageSizer
+            :url="require(`../src/images/email-1.jpg`)"
+            :width="1000"
+            :height="1000"
+            :alt="`Three Basketball Games Cover`"
+          />
+        </div>
+
+        <div class="mb-20">
+          <ImageSizer
+            :url="require(`../src/images/email-3.jpg`)"
+            :width="2000"
+            :height="1597"
+            :alt="`Three Basketball Games Cover`"
+          />
+        </div>
+
+        <div class="mb-20">
+          <ImageSizer
+            :url="require(`../src/images/email-9.jpg`)"
+            :width="2000"
+            :height="1597"
+            :alt="`Three Basketball Games Cover`"
+          />
+        </div>
+
         <div 
           v-for="(media, index) in project.data.media"
           :key="index"

@@ -36,13 +36,6 @@
       class="col-span-3"
     >
       <p class="text-red" v-html="spanify('Semi-Recent/Upcoming')"></p>
-      <p>
-        <nuxt-link 
-          to="/three-basketball-games-order"
-          class="lg:hover:text-grey"
-          v-html="spanify('Order Three Basketball Games')"
-        ></nuxt-link>
-      </p>
       <p 
         v-for="(item, index) in recent" 
         :key="index"
