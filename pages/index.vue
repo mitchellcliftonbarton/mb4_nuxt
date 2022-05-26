@@ -6,6 +6,15 @@
       <div class="media col-span-9 mt-20">
         <div class="mb-20">
           <ImageSizer
+            :url="require(`../src/images/untitled-espn.jpg`)"
+            :width="1500"
+            :height="1783"
+            :alt="`A Painting Thing`"
+          />
+        </div>
+
+        <div class="mb-20">
+          <ImageSizer
             :url="require(`../src/images/email-1.jpg`)"
             :width="1000"
             :height="1000"
