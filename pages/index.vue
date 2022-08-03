@@ -6,21 +6,30 @@
       <div class="media col-span-9 mt-20">
         <div class="mb-20">
           <ImageSizer
-            :url="require(`../src/images/untitled-espn.jpg`)"
+            :url="require(`../src/images/untitled-3.jpg`)"
             :width="1800"
             :height="2250"
             :alt="`A Painting Thing`"
           />
         </div>
 
-        <div class="mb-20">
+        <!-- <div class="mb-20">
+          <ImageSizer
+            :url="require(`../src/images/untitled-espn.jpg`)"
+            :width="1800"
+            :height="2250"
+            :alt="`A Painting Thing`"
+          />
+        </div> -->
+
+        <!-- <div class="mb-20">
           <ImageSizer
             :url="require(`../src/images/untitled-2.jpg`)"
             :width="1800"
             :height="2250"
             :alt="`A Painting Thing`"
           />
-        </div>
+        </div> -->
 
         <div class="mb-20">
           <ImageSizer
