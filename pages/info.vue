@@ -38,7 +38,6 @@
             <p v-html="spanify('“The Flat File: Year Seven” - Tiger Strikes Asteroid, Brooklyn, NY')"></p>
             <p v-html="spanify('“Press Refresh” - The Wrong Biennale (4th Edition), Online')"></p>
             <p v-html="spanify('“Dancing In Peckham” - Peckham24, London, UK')"></p>
-            <p v-html="spanify('“n e w f l e s h” - Light Factory, Charlotte, NC - Curated by Efrem Zelony Mindell')"></p>
           </div>
         </div>
         <div class="flex mb-8">
@@ -96,7 +95,7 @@
       <div class="publications">
         <h2 class="mb-12 text-red" v-html="spanify('Publications')"></h2>
         <div class="formatted">
-          <p><a target="_blank" rel="noopener" href="https://gnomicbook.com/collections/books/products/newflesh" v-html="spanify('“n e w f l e s h”, Gnomic Book')"></a></p>
+          <p v-html="spanify('“Three Basketball Games”, Self-published')"></p>
           <p v-html="spanify('“Freestylez”, Self-published')"></p>
         </div>
       </div>
