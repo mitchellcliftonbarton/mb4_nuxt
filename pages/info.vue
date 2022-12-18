@@ -91,14 +91,6 @@
           <p><a target="_blank" rel="noopener" href="https://www.inthein-between.com/mitchell-barton-a-concert/" v-html="spanify('In The In-Between')"></a></p>
         </div>
       </div>
-
-      <div class="publications">
-        <h2 class="mb-12 text-red" v-html="spanify('Publications')"></h2>
-        <div class="formatted">
-          <p v-html="spanify('“Three Basketball Games”, Self-published')"></p>
-          <p v-html="spanify('“Freestylez”, Self-published')"></p>
-        </div>
-      </div>
     </div>
   </div>
 </template>
